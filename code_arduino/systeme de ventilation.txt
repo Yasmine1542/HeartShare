@@ -1,0 +1,96 @@
+#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
+
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+String name;
+int buzzer =  2;
+int smokeA0 = 3;
+#define ventipin 5
+
+// Your threshold value. You might need to change it.
+
+int data; // variable contenant le caractère lu
+
+
+void setup() {
+  lcd.init();                      // initialize the lcd 
+  lcd.backlight();  
+   lcd.setCursor(0,0);
+pinMode(buzzer, OUTPUT);
+pinMode(smokeA0, INPUT);
+  pinMode (ventipin, OUTPUT);
+
+Serial.begin(9600); //Permet d'initialiser le moniteur série à 9600 bauds 
+
+
+}
+void loop() {
+  int analogSensor = analogRead(smokeA0);
+
+  Serial.print("");
+  Serial.println(analogSensor);
+  // Checks if it has reached the threshold value
+  if (analogSensor > 300)
+  {
+
+   lcd.setCursor(0,0);
+    lcd.print("gaz detected!");
+analogWrite(ventipin,5);
+   lcd.setCursor(0,1);
+   lcd.print(analogSensor);
+
+   
+   tone(buzzer, 1000);
+   delay(500);
+   noTone(buzzer);
+   delay(500);
+   Serial.println(analogSensor); //envoyer le nouvel état de la lampe
+
+  }
+  else if (analogSensor < 300)
+  {
+    lcd.setCursor(0,0);
+    lcd.print("No GAZ detected.");
+    lcd.setCursor(0,1);
+  lcd.print(analogSensor);
+  noTone(buzzer);
+ 
+  delay(800); //envoyer le nouvel état de la lampe
+
+  }
+  delay(100);
+   if (Serial.available())
+ {
+     lcd.clear();
+    
+//nom
+     name=Serial.readString();
+     lcd.setCursor(1, 1);
+     lcd.print(name);
+     delay(2000);
+   
+     lcd.clear();
+ }
+     
+
+  /* if (Serial.available()){     
+     data=Serial.read(); 
+      Serial.println(data);
+     if(data=='1') //si le caractère lu est égale à 1
+    {
+      
+    tone(buzzer, 1000); 
+   
+    digitalWrite(buzzer,HIGH);
+     }  
+     else if(data=='0') //si le caractère lu est égale à 0
+
+     {
+      
+    digitalWrite(buzzer,LOW);
+   noTone(buzzer);
+   
+     }    
+  }*/
+}

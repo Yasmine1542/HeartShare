@@ -1,0 +1,48 @@
+#include "Wire.h"
+#include "LiquidCrystal_I2C.h"
+
+
+LiquidCrystal_I2C lcd(0x27,16,2); // définit le type d'écran lcd 16 x 2
+
+String name;
+String adress;
+
+void setup() {
+   lcd.init(); // initialisation de l'afficheurs
+   lcd.backlight();
+   lcd.setCursor(0,0);
+   lcd.print("Cheres");
+   lcd.setCursor(6,1);
+   lcd.print("benevoles");
+   Serial.begin(9600);
+}
+
+void loop() 
+{
+ if (Serial.available())
+ {
+     lcd.clear();
+
+     lcd.setCursor(0, 0);
+     lcd.print("Le gagnant est:");
+     delay(1000);
+//nom
+     name=Serial.readString();
+     lcd.setCursor(1, 1);
+     lcd.print(name);
+     delay(2000);
+
+     lcd.clear();
+
+     lcd.setCursor(0, 0);
+     lcd.print("Origine:");
+
+
+
+//adresse
+     adress=Serial.readString();
+     lcd.setCursor(1,1);
+     lcd.print(adress);
+
+ }
+}
