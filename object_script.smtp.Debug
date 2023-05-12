@@ -1,0 +1,17 @@
+INPUT(
+./debug\Employee.o
+./debug\aliment.o
+./debug\arduino.o
+./debug\benevole.o
+./debug\connection.o
+./debug\donataires.o
+./debug\donateur.o
+./debug\main.o
+./debug\mainwindow.o
+./debug\notification.o
+./debug\qrcode.o
+./debug\smtp.o
+./debug\qrc_res.o
+./debug\moc_mainwindow.o
+./debug\moc_smtp.o
+);

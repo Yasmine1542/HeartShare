@@ -1,0 +1,17 @@
+INPUT(
+./release\Employee.o
+./release\aliment.o
+./release\arduino.o
+./release\benevole.o
+./release\connection.o
+./release\donataires.o
+./release\donateur.o
+./release\main.o
+./release\mainwindow.o
+./release\notification.o
+./release\qrcode.o
+./release\smtp.o
+./release\qrc_res.o
+./release\moc_mainwindow.o
+./release\moc_smtp.o
+);

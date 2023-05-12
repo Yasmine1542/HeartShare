@@ -1,0 +1,48 @@
+#include "employee.h"
+
+employee::employee()
+{
+id=0; nom ="";fonction="";email="";satut="";num_tel=0;adresse="";mdp="";droit_dacces="";
+}
+
+employee::employee(int id ,QString nom,QString fonction,QString email,QString statut,int,QString adresse,QString mdp,QString droit_dacces)
+{this->id=id;this->nom=nom;this->fonction=fonction;this email->=email;this->satut=satut;this->num_tel=num_tel;this->adresse=adresse;this->mdp=mdp;}
+int employee:: getid(){return id;}
+QString employee:: getnom(){return nom;}
+QString employee::getprenom(){return prenom;}
+void employee::setid(int id ){this ->id=id;}
+void employee::setnom(QString nom){this ->nom=nom;}
+void employee::setprenom(QString prenom){this ->prenom=prenom;}
+   
+
+
+
+
+/*class employee
+{
+public:
+    employee();
+    employee(int,QString,QString,QString,QString,int,QString,QString,QString,QString);
+    int getid();
+    QString getnom();
+    QString getfonction();
+     QString getemail();
+      QString getstatut();
+       int getnum_tel();
+        QString getadresse();
+         QString getmdp();
+          QString droit_dacces();
+    void setid(int);
+    void setnom(QString);
+    void setfonction(QString);
+    void setemail (QString);
+    void setstatut (QString);
+    void setnum_tel (int);
+void setadresse (QString);
+void setmdp (QString);
+void setdroit_dacces (QString);
+private:
+    int id,num_tel ;
+    QString nom,fonction,email,statut,adresse,mdp,droit_acces;
+
+};*/

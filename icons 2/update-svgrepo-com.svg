@@ -1,0 +1,11 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg width="800px" height="800px" viewBox="0 0 24 24" id="update" xmlns="http://www.w3.org/2000/svg" class="icon multi-color" fill="#000000">
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier">
+<circle id="tertiary-fill" cx="12" cy="12" r="5" style="fill: #b7b7b7; stroke-width: 2;"/>
+<path id="secondary-stroke" d="M4,12A8,8,0,0,1,18.93,8M5.07,16A8,8,0,0,0,20,12" style="fill: none; stroke: #ef829b; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"/>
+<path id="primary-stroke" d="M19,3V8H14m-4,8H5v5" style="fill: none; stroke: #000000; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"/>
+</g>
+</svg>
